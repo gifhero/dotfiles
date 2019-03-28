@@ -1,6 +1,12 @@
+.PHONY: vim bash
+
+COPY=cp
+
 vim:
-	cp vim/.vimrc ~/.vimrc
-	cp -r vim/.vim/ ~/.vim
+	$(COPY) vim/vimrc ~/.vimrc
+	$(COPY) -r vim/vim/ ~/.vim/
 
 bash:
-	cp bash/.bashrc ~/.bashrc
+	$(COPY) bash/bashrc ~/.bashrc
+
+install: vim bash
